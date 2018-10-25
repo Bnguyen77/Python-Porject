@@ -55,6 +55,7 @@
             }
 
         #bottom{
+            text-align: center;
             margin-left: 170px;
             margin-right: 170px;
             margin-top: 20px;
@@ -75,51 +76,71 @@
         
         .container1 {
             
-            margin: 2%;
+            text-align: center;
+            margin:20px 20px 20px 80px ;
             display: inline-block;
             position: relative;
-            width: 25%;
+            width: 300px;
 }
 
-.image {
-  opacity: 1;
-  display: block;
-  width: 100%;
-  height: auto;
-  transition: .5s ease;
-  backface-visibility: hidden;
-}
+        .image {
+            border-radius: 10px;
+            opacity: 1;
+            display: block;
+            width: 100%;
+            height: auto;
+            transition: .5s ease;
+            backface-visibility: hidden;
+        }
 
-.middle {
-  transition: .5s ease;
-  opacity: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  text-align: center;
-}
+        .middle {
+            transition: .5s ease;
+            opacity: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            text-align: center;
+        }
 
-.container1:hover .image {
-  opacity: 0.3;
-}
+        .container1:hover .image {
+            opacity: 0.3;
+        }
 
-.container1:hover .middle {
-  opacity: 1;
-}
+        .container1:hover .middle {
+            opacity: 1;
+        }
 
-.text {
-  background-color: rgb(0, 105, 217);
-  color: white;
-  font-size: 26px;
-  padding: 16px 32px;
-}
+        .text {
+            background-color: rgb(0, 105, 217);
+            color: white;
+            font-size: 26px;
+            padding: 16px 32px;
+        }
+        .Nav{
+            width: 100%;
+            color:rgb(0, 105, 217);
+            display: inline-block;
+            background-color: rgba(245, 244, 243, 0.911);
+        }
+        .Nav.h2{
+            display: inline-block;
+            margin-left: 50px;
+        }
+        #logout{
+            margin:5px;
+            width: 120px;
+            float: right;
+        }
     </style>
 </head>
 
 <body>
-    <!-- Search form -->
+    <div class="Nav">
+        <a href="/logOut" id="logout"  class="btn btn-primary">Log Out</a>
+        <h2>Welcome to Gettek {{User.userName}}</h2>
+    </div>
 
     <div class="container">
         <br />
@@ -178,28 +199,28 @@
 
 <div id = "bottom">
         
-        <a href=""><div class="container1">
-          <img src="test1.jpg" alt="Avatar" class="image" style="width:100%">
+        <a href="/products/{{category}}"><div class="container1">
+          <img src="TV.jpeg" alt="Avatar" class="image" style="width:100%">
           <div class="middle">
-            <div class="text">TV</div>
+            <div class="text">TVs</div>
           </div>
         </div></a>
         <a href=""><div class="container1">
-          <img src="test1.jpg" alt="Avatar" class="image" style="width:100%">
+          <img src="Laptop1.jpeg" alt="Avatar" class="image" style="width:100%">
           <div class="middle">
-            <div class="text">Laptop</div>
+            <div class="text">Laptops</div>
           </div>
         </div></a>
         <div class="container1">
-          <img src="test1.jpg" alt="Avatar" class="image" style="width:100%">
+          <img src="Phone1.jpg" alt="Avatar" class="image" style="width:100%">
           <div class="middle">
-            <div class="text">Phone</div>
+            <div class="text">Phones</div>
           </div>
         </div></a>
         <div class="container1">
-          <img src="test1.jpg" alt="Avatar" class="image" style="width:100%">
+          <img src="Game.jpg" alt="Avatar" class="image" style="width:100%">
           <div class="middle">
-            <div class="text">Phone</div>
+            <div class="text">Gaming Consoles</div>
           </div>
         </div></a>
 
