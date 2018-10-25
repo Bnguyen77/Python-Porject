@@ -4,10 +4,26 @@ from django.shortcuts import render, redirect, HttpResponse
 def index(request):
     return render(request, "Price/logReg.html")
 def register(request):
+    user1 = User.objects.create(email=request.POST['email'], password=request.POST['password'], confirm_password=request.POST['confirm_password'])
+    request.session['userid'] = user1.id
     return render(request, "Price/Register.html")
 def dashboard(request):
-    
-    return render(request, "Price/dashboard.html")
+    Products = Product.objects.all()
+    Phones = Product.objects.filter(category='Phones')
+    Laptops = Product.objects.filter(category='Laptops')
+    Television = Product.objects.filter(category='Television')
+    Gaming = Product.objects.filter(category='Gaming')
+
+    context = {
+        'Products' : Products,
+        'Phones' : Phones,
+        'Laptops' : Laptops,
+        'Television' : Television,
+        'Gaming' : Gaming,
+
+    }
+
+    return render(request, "Price/dashboard.html", context)
 def productCategory(request, category):
     productInCategory = Product.objects.filter(category=category)
     context = {
@@ -20,7 +36,7 @@ def productPage(request, productId):
     context = {
         "IndividualProduct": IndividualProduct
     }
-    return render(request, "Price/productpage.html")
+    return render(request, "Price/productpage.html", context)
 
 
 
