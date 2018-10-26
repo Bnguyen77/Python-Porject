@@ -11,7 +11,7 @@
     <title>Document</title>
     <style>
     body{
-            background-image: url("test3.JPG");
+        background-image: url("https://i.imgur.com/jAKzvMm.jpg");
             background-size: cover;
             background-repeat: no-repeat;
             width: 100%;
@@ -33,13 +33,50 @@
             width: 120px;
             float: right;
         }
+        h1{
+            color:rgb(0, 105, 217); 
+        }
+        .content{
+            width: 100%;
+            display: inline-block;
+            text-align: center;
+        }
+        .list-group{
+            display: inline-block;
+            width: 60%;
+            margin: 20%;
+            margin-top: 20px;
+            margin-bottom: 10px
+        }
     </style>
 
 </head>
 <body>
     <div class="Nav">
-        <a href="/logOut" id="logout"  class="btn btn-primary">Log Out</a>
-        <h2>Welcome to Gettek {{User.userName}}</h2>
+        <a href="/logout" id="logout"  class="btn btn-primary">Log Out</a>
+        <h2>Welcome to Gettek </h2>
     </div>
+    <br><br>
+    <div class= "content">
+        <h1>Items in {{category}}</h1>
+        <div class="list-group">
+                {% for product in productInCategory %}
+                <a href="/product/{{product.id}}" data-toggle="modal" data-target="#exampleModalLong" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">{{product.name}}</h5>
+                            <small class="text-muted">{{Retailer.name}}</small>
+                        </div>
+                        <p class="mb-1">{{product.details}}</p>
+                        
+                    </a>
+
+                    
+                        
+                    {% endfor %}
+                    
+                    
+    </div>
+    
+          
 </body>
 </html>
