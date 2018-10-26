@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
-    crossorigin="anonymous">
+        crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
         crossorigin="anonymous">
     <title>Document</title>
     <style>
-    body{
-            background-image: url("test3.JPG");
+        body{
+        background-image: url("https://i.imgur.com/jAKzvMm.jpg");
             background-size: cover;
             background-repeat: no-repeat;
             width: 100%;
@@ -33,13 +34,67 @@
             width: 120px;
             float: right;
         }
+        h1{
+            color:rgb(0, 105, 217); 
+        }
+        .content{
+            width: 100%;
+            display: inline-block;
+            text-align: center;
+        }
+        .list-group{
+            display: inline-block;
+            width: 60%;
+            margin: 20%;
+            margin-top: 20px;
+            margin-bottom: 10px
+        }
     </style>
 
 </head>
+
 <body>
     <div class="Nav">
-        <a href="/logOut" id="logout"  class="btn btn-primary">Log Out</a>
+        <a href="/logOut" id="logout" class="btn btn-primary">Log Out</a>
         <h2>Welcome to Gettek {{User.userName}}</h2>
     </div>
+    <br><br>
+    <div class="content">
+        <h1>Items in {{catecory}}</h1>
+        <div class="list-group">
+            <a href="" data-toggle="modal" data-target="#exampleModalLong" class="list-group-item list-group-item-action flex-column align-items-start">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">List group item heading</h5>
+                    <small class="text-muted">3 days ago</small>
+                </div>
+                <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius
+                    blandit.</p>
+                <small class="text-muted">Donec id elit non mi porta.</small>
+            </a>
+
+
+        </div>
+        <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        ...
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
 </body>
+
 </html>
